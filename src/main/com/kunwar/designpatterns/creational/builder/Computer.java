@@ -1,5 +1,10 @@
 package main.com.kunwar.designpatterns.creational.builder;
 
+/**
+ * @author Kunwar
+ * Product Class
+ * Builder Pattern Class
+ */
 public class Computer {
 	
 	//required parameters
