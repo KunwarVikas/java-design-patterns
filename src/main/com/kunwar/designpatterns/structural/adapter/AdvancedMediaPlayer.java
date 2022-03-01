@@ -4,6 +4,6 @@ package main.com.kunwar.designpatterns.structural.adapter;
  * @author Kunwar
  */
 public interface AdvancedMediaPlayer {
-   void playVlc(String fileName);
-   void playMp4(String fileName);
+   void playVlcPlayer(String fileName);
+   void playMp4Player(String fileName);
 }

@@ -4,22 +4,25 @@ package main.com.kunwar.designpatterns.structural.adapter;
  * @author Kunwar
  */
 public class MediaAdapter implements MediaPlayer {
-   AdvancedMediaPlayer advancedMusicPlayer;
 
+   public static final String VLC = "vlc";
+   public static final String MP_4 = "mp4";
+
+   private AdvancedMediaPlayer advancedMusicPlayer;
    public MediaAdapter(String audioType){
-      if(audioType.equalsIgnoreCase("vlc") ){
-         advancedMusicPlayer = new VlcPlayer();			
-      }else if (audioType.equalsIgnoreCase("mp4")){
-         advancedMusicPlayer = new Mp4Player();
+      if(audioType.equalsIgnoreCase(VLC) ){
+         advancedMusicPlayer = new VlcMusicPlayer();
+      }else if (audioType.equalsIgnoreCase(MP_4)){
+         advancedMusicPlayer = new Mp4MusicPlayer();
       }	
    }
 
    @Override
-   public void play(String audioType, String fileName) {
-      if(audioType.equalsIgnoreCase("vlc")){
-         advancedMusicPlayer.playVlc(fileName);
-      }else if(audioType.equalsIgnoreCase("mp4")){
-         advancedMusicPlayer.playMp4(fileName);
+   public void playMusic(String audioType, String fileName) {
+      if(audioType.equalsIgnoreCase(VLC)){
+         advancedMusicPlayer.playVlcPlayer(fileName);
+      }else if(audioType.equalsIgnoreCase(MP_4)){
+         advancedMusicPlayer.playMp4Player(fileName);
       }
    }
 }
